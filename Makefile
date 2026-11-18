@@ -3,7 +3,8 @@
 # mistake here reaches all of them; tests/check_site.py guards it.
 # make check : file checks, plus every sitemap it names answers 200 on the live sites
 # make ship  : check, then squash-merge the open PR, wait for the Pages deploy of that commit,
-#              check the live root files, and revert the merge if that fails
+#              check the live root files, and revert the merge if that fails. It waits up to 20 minutes
+#              for the deploy, because the Actions queue can take more than 10 (2026-11-18).
 SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
 REPO    := VadneyK/vadneyk.github.io
@@ -22,7 +23,7 @@ ship: check
 	GH_TOKEN=$(GHTOKEN) gh pr merge $(PR) --repo $(REPO) --squash --delete-branch
 	git fetch -q origin main
 	sha=$$(git rev-parse origin/main); echo "waiting for Pages to serve $$sha"; \
-	for i in $$(seq 1 60); do [ "$$(curl -sf "$(LIVE)version.txt?n=$$i" | tr -d '[:space:]')" = "$$sha" ] && break; sleep 10; done; \
+	for i in $$(seq 1 120); do [ "$$(curl -sf "$(LIVE)version.txt?n=$$i" | tr -d '[:space:]')" = "$$sha" ] && break; sleep 10; done; \
 	if [ "$$(curl -sf "$(LIVE)version.txt?n=final" | tr -d '[:space:]')" = "$$sha" ] && \
 	   curl -sf "$(LIVE)robots.txt" | grep -qx 'Allow: /' && \
 	   curl -sf "$(LIVE)" | grep -q 'url=https://vadneyk.github.io/portfolio/' && \

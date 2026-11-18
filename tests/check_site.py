@@ -35,7 +35,8 @@ for f in sorted(PUB.rglob("*")) + [ROOT / "README.md"]:
     for pat, label in BANNED:
         if (pat.search(text) if hasattr(pat, "search") else pat in text):
             errors.append("%s: %s" % (f.relative_to(ROOT), label))
-    if f.suffix == ".html" and not re.search(r"<title>[^<]+</title>", text):
+    # A Search Console verification file is one plain line, not a page.
+    if f.suffix == ".html" and not re.match(r"google[0-9a-f]+\.html$", f.name) and not re.search(r"<title>[^<]+</title>", text):
         errors.append("%s: no title" % f.relative_to(ROOT))
 
 robots = (PUB / "robots.txt").read_text(encoding="utf-8")

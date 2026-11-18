@@ -13,6 +13,9 @@ few files that only work at the top of the host:
 - `index.html`: an instant redirect to https://vadneyk.github.io/portfolio/, with a list of the sites for
   anyone whose browser does not follow it.
 - `404.html`: the page shown for an address that does not exist.
+- `e72f642df69795931faca64c89f7d45b.txt`: the IndexNow key. Bing (and so Copilot) and other IndexNow engines accept
+  URL updates for any site under vadneyk.github.io from `tools/indexnow.py` in the hub, which names this file.
+  The key is public by design; it only proves the sender controls the host.
 
 No tracking, no analytics, nothing that collects data.
 

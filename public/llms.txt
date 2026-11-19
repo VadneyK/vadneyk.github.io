@@ -12,7 +12,7 @@
 - [How to Find Internships](https://vadneyk.github.io/internships/): a free guide for teens ages 12 to 18 in the US and Vancouver, BC, with real programs, work-permit rules and a message to send; open data under CC BY 4.0
 - [Student Job Kit](https://vadneyk.github.io/student-job-toolkit/): a free job-search kit for college students and new grads that works with a free AI chat account
 - [chapter-and-verse](https://vadneyk.github.io/chapter-and-verse/): a sample report from a tool that checks every scripture claim in an AI-written study plan against the Bible text
-- [Open Word Study](https://vadneyk.github.io/open-word-study-site/): shows how a Greek or Hebrew word is translated in every place it appears, built from open data
+- [Word of God Workshop (みことば工房)](https://vadneyk.github.io/open-scripture-systems/): free Bible study tools for the Greek New Testament and the Hebrew Old Testament, in Japanese and English, by Open Scripture Systems
 - [The Way](https://vadneyk.github.io/the-way/): an open-source pixel art RPG that follows the disciples through the Gospels
 
 ## Optional

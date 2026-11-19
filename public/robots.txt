@@ -6,4 +6,3 @@ Sitemap: https://vadneyk.github.io/internships/sitemap.xml
 Sitemap: https://vadneyk.github.io/student-job-toolkit/sitemap.xml
 Sitemap: https://vadneyk.github.io/chapter-and-verse/sitemap.xml
 Sitemap: https://vadneyk.github.io/the-way/sitemap.xml
-Sitemap: https://vadneyk.github.io/open-scripture-systems/sitemap.xml
